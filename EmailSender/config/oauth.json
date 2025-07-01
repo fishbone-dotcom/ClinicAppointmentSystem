@@ -1,0 +1,11 @@
+{
+	"SMTPHost": "",
+	"SMTPUserName": "",
+	"SMTPSenderAddress": "",
+	"authorizationCode" : "",
+	"clientId" : "",
+	"secretKey" : "",
+	"redirectURI" : "",
+	"refreshToken" : "",
+	"accessToken":  ""
+}

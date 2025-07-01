@@ -1,0 +1,18 @@
+{
+	"host": "smtp.gmail.com",
+	"port": 587,
+	"secure": false,
+	"auth": {
+		"user": "",
+		"pass": ""
+	},
+	"sender": "",
+	"pool": true,
+	"maxConnections": 5,
+	"connectionTimeout": 60000,
+	"socketTimeout": 60000,
+	"maxMessages": 0,
+	"tls": {
+		"rejectUnauthorized": false
+	}
+}
