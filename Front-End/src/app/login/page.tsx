@@ -13,6 +13,8 @@ export default function LoginPage() {
     e.preventDefault();
     setError('');
 
+    setEmail('')
+
 
     try {
       const res = await fetch('http://localhost:3000/api/login', {
@@ -20,8 +22,10 @@ export default function LoginPage() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
+        credentials: 'include'
       });
+
 
       const data = await res.json();
 
