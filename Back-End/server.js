@@ -3,6 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./helpers/database')
+const cookieParser = require('cookie-parser');
 require('dotenv').config(); // For loading .env variables
 
 const appointmentRoutes = require('./routes/appointments');
@@ -16,8 +17,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors());                // Enable CORS if you have frontend on different domain/port
-app.use(express.json()); // for JSON body
+
+app.use(cookieParser());
+app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:3030', // frontend origin (Next.js dev server)
+  credentials: true                // ✅ important so browser sends cookies
+}));
+
 app.use(express.urlencoded({ extended: true })); // for form-urlencoded body
 
 // set to default database
